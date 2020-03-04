@@ -11,11 +11,7 @@
 
     <name>Beta Additions</name>
     <properties>
-
-        <!-- The full path to your plugin's main class, so that Spigot can find and load it -->
         <main.class>net.skeagle.beta_additions.BetaMain</main.class>
-
-        <!-- How letters in your code should be saved on your disk, leave to UTF-8 to support all languages -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
