@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class BackUtil {
 
+    //possible /back?
+
     private static BackUtil back;
     private final Map<Player, Location> backLoc = new HashMap<>();
 

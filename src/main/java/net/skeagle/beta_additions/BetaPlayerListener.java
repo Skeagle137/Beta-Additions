@@ -43,7 +43,7 @@ public class BetaPlayerListener extends PlayerListener {
 
     @Override
     public void onPlayerTeleport(PlayerMoveEvent e) {
-
+        //possible /back?
     }
 
     @Override

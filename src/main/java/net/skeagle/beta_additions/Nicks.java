@@ -11,6 +11,8 @@ import java.util.HashMap;
 import static net.skeagle.beta_additions.util.Commons.log;
 
 public class Nicks {
+    //TODO: fix this nightmare
+
     private final Resources r;
 
     public Nicks(Resources r) {
