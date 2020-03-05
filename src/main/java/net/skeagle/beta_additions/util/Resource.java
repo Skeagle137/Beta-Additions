@@ -10,6 +10,7 @@ import java.net.URLConnection;
 import java.util.HashMap;
 
 class Resource extends Configuration {
+    @Getter
     private final File file;
     @Getter
     private final Configuration settings;

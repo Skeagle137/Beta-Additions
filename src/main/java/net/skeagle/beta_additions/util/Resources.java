@@ -5,6 +5,8 @@ import net.skeagle.beta_additions.Nicks;
 import org.bukkit.entity.Player;
 import org.bukkit.util.config.Configuration;
 
+import java.io.File;
+
 public class Resources
 {
     private final Resource nicks;
@@ -15,16 +17,20 @@ public class Resources
         this.nicks = new Resource("nicks.yml", main);
     }
 
-    public void load(Player p) {
+    public void loadNicks(Player p) {
         this.nickscfg.loadNicks(p);
     }
 
-    public void save(Player p) {
-        this.nickscfg.save();
+    public void saveNicks(Player p) {
+        this.nickscfg.saveNicks(p);
     }
 
     public Configuration getNicks() {
         return this.nicks.getSettings();
+    }
+
+    public File getNicksFile() {
+        return this.nicks.getFile();
     }
 }
 

@@ -38,9 +38,6 @@ public class Nicks {
             }
             br.close();
         }
-        catch (IOException e) {
-            log(e, "Could not load the nicknames file.");
-        }
     }
 
     public void saveNicks(Player p) {

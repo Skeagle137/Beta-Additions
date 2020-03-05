@@ -157,8 +157,13 @@ public class BetaMain extends JavaPlugin {
             if (!sender.isOp()) {
                 return true;
             }
-            this.r.save();
-            this.r.load();
+            for (Player pl : this.getServer().getOnlinePlayers()) {
+                PlayerCache cache = PlayerCache.getCache(pl);
+                if (cache.getNickname() != null) {
+                    this.r.saveNicks(pl);
+                    this.r.loadNicks(pl);
+                }
+            }
             say(sender, "&b[Beta Additions] &6Configs reloaded!");
         }
         return true;
