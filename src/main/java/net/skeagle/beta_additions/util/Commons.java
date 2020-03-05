@@ -51,7 +51,7 @@ public class Commons {
         return (Player) sender;
     }
 
-    public static void dispatchCommand(String cmd) {
+    public static void dispatchCommand(String cmd) { //now if we were on beta 1.7.3, maybe we wouldn't have to do this
         try {
 
             Field f = CraftServer.class.getDeclaredField("console");

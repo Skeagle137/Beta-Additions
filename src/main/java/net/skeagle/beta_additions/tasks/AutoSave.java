@@ -11,6 +11,6 @@ public class AutoSave {
 
     private void autoSave(BetaMain main) {
         main.getServer().getScheduler().scheduleSyncRepeatingTask(main, () ->
-                Commons.dispatchCommand("save-all"), 0L, 20L * 60 * 60 * 6); //6 hours
+                Commons.dispatchCommand("save-all"), 0L, 20L * 60 * 60 * 3); //3 hours
     }
 }

@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="beta_additions" />
+        <module name="Beta-Additions" />
         <module name="Beta Additions" />
+        <module name="beta_additions" />
       </profile>
     </annotationProcessing>
   </component>

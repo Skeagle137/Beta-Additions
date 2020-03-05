@@ -18,6 +18,11 @@ import static net.skeagle.beta_additions.util.Commons.*;
 
 public class BetaMain extends JavaPlugin {
 
+    //TODO: fix nicks w/ Configuration
+    //TODO: complete cmd manager
+    //TODO: bed respawn maybe
+    //TODO: warps(?)
+
     private static Server server;
     private Resources r;
     private ClassLoader loader;
