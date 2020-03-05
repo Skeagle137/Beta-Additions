@@ -51,7 +51,7 @@ public class Commons {
         return (Player) sender;
     }
 
-    public static void dispatchCommand(String cmd) { //now if we were on beta 1.7.3, maybe we wouldn't have to do this
+    public static void dispatchCommand(String cmd) { //no official dispatchCommand() in beta 1.3
         try {
 
             Field f = CraftServer.class.getDeclaredField("console");
@@ -63,6 +63,10 @@ public class Commons {
             }
 
         } catch (Exception ignored) {}
+    }
+
+    public static String cleanFileName(String name) {
+        return name.toLowerCase().replaceAll("[^a-z0-9]", "_");
     }
 
 }

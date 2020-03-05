@@ -9,26 +9,17 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 
-class Resource extends Configuration {
+public class Resource extends Configuration {
     @Getter
     private final File file;
-    @Getter
-    private final Configuration settings;
     private final BetaMain main;
     private final ClassLoader loader;
 
-    Resource(String name, BetaMain main) {
-        super(new File(main.getDataFolder(), name));
+    public Resource(File file, BetaMain main) {
+        super(file);
         this.main = main;
         this.loader = main.getLoader();
-        this.file = new File(main.getDataFolder(), name);
-        this.settings = new Configuration(this.file);
-        if (!this.file.getParentFile().exists()) {
-            this.file.getParentFile().mkdirs();
-        }
-        if (!this.file.exists()) {
-            this.saveResource(name, true);
-        }
+        this.file = file;
         if (this.root == null) {
             this.root = new HashMap<>();
         }
@@ -49,9 +40,9 @@ class Resource extends Configuration {
         }
     }
 
-    public void saveResource(String resourcePath, boolean replace) {
-        if (resourcePath != null && !resourcePath.equals("")) {
-            resourcePath = resourcePath.replace('\\', '/');
+    public void load(boolean replace) {
+        if (!this.file.getName().equals("")) {
+            String resourcePath = this.file.getName().replace('\\', '/');
             InputStream in = this.getResource(resourcePath);
             if (in == null) {
                 throw new IllegalArgumentException("The embedded resource '" + resourcePath + "' cannot be found in " + this.file);

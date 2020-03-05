@@ -1,36 +1,32 @@
 package net.skeagle.beta_additions.util;
 
 import net.skeagle.beta_additions.BetaMain;
-import net.skeagle.beta_additions.Nicks;
+import net.skeagle.beta_additions.PlayerData;
 import org.bukkit.entity.Player;
-import org.bukkit.util.config.Configuration;
 
 import java.io.File;
 
 public class Resources
 {
-    private final Resource nicks;
+    private final Resource data;
     private Resource warps;
-    private final Nicks nickscfg = new Nicks(this);
+    private final PlayerData dataConfig;
 
     public Resources(BetaMain main) {
-        this.nicks = new Resource("nicks.yml", main);
+        this.data = new Resource(new File(main.getDataFolder(), "playerdata"), main);
+        this.dataConfig = new PlayerData(this, main);
     }
 
     public void loadNicks(Player p) {
-        this.nickscfg.loadNicks(p);
+        this.dataConfig.loadNicks(p);
     }
 
     public void saveNicks(Player p) {
-        this.nickscfg.saveNicks(p);
+        this.dataConfig.saveNicks(p);
     }
 
-    public Configuration getNicks() {
-        return this.nicks.getSettings();
-    }
-
-    public File getNicksFile() {
-        return this.nicks.getFile();
+    public File getDataFile() {
+        return this.data.getFile();
     }
 }
 
